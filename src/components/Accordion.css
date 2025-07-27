@@ -1,0 +1,121 @@
+/* src/components/Accordion.css */
+
+.accordion-container {
+    width: 100%;
+    max-width: 900px; /* Adjust as needed */
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Crucial for hiding overflowing content during transition */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .accordion-header {
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    padding: 15px 20px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-header:hover {
+    background-color: #57e3cb;
+  }
+  
+  .accordion-header.open {
+    background-color: #57e3cb;
+  }
+  
+  .accordion-icon {
+    font-size: 1.5em;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-header.open .accordion-icon {
+    transform: rotate(180deg); /* Optional: rotate icon when open */
+  }
+  
+  .accordion-content {
+    max-height: 0; /* Initial state: hidden */
+    transition: max-height 0.5s ease-out; /* Smooth transition for opening/closing */
+    overflow: hidden; /* Hide overflow during transition */
+  }
+  
+  .accordion-content-inner {
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+  }
+  
+  /* Add some basic styling for the form within the accordion for consistency */
+  .goal-form-container .goal-form {
+    padding: 0; /* Remove internal padding if accordion content already has it */
+    box-shadow: none; /* Remove box shadow if accordion already has one */
+    border: none; /* Remove border if accordion already has one */
+  }
+  
+  .goal-form-container .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .goal-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .goal-form-container input[type="text"],
+  .goal-form-container input[type="number"],
+  .goal-form-container input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .goal-form-container .auth-button { /* Re-use existing button style */
+    width: 100%;
+    padding: 12px;
+    background-color: #14ccad; /* Purple, from Navbar/Auth */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .goal-form-container .auth-button:hover:not(:disabled) {
+    background-color: #92f8e7;
+  }
+  
+  .goal-form-container .auth-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .goal-form-container .error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .goal-form-container .success-message {
+    color: #28a745;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+  }
